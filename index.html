@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w2.org/1999/xhtml">
+<html lang="en">
+    <head>
+	<meta name="generator" content="Hugo 0.141.0">
+            <meta charset="utf-8" />
+    <title>Ben Sparks </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My terminal cv">
+    <meta property="og:title" content="Ben Sparks" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://cv.benjaminsparks.me/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="canonical" href="https://cv.benjaminsparks.me/" />    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.2/js/jquery.terminal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/less.min.js"></script>
+    <script src="https://unpkg.com/jquery.terminal/js/autocomplete_menu.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.42.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            width: 100%;
+            font-size: 18px;
+        }
+    </style>
+
+
+
+
+    </head>
+        <body>
+        
+<script> 
+jQuery(document).ready(function($) {
+    var animation = false;
+
+    var commands = {
+        help: "shows help",
+        less: "Use less as output method",
+        whois: "list basic details",
+        social: "list social networks",
+        work: "list work experience",
+        education: "list education",
+        skills: "list core skills",
+        softskills: "list soft skills",
+        languages: "list spoken languages",
+        projects: "list projects",
+         
+            certifications: "list certifications",
+        
+        
+            startx: "starts graphical environment",
+        
+        
+            "more": "List of programming\/scripting languages",
+        
+        
+            source: "shows details about template powering this website",
+        
+        
+            version: "Current version",
+        
+        
+            exit: "exit the terminal",
+        
+        all: "Show all details",
+    };
+
+    function progressBar(number) {
+        var barLength = Math.round(number / 10);
+        var barFilled = Array(barLength + 1).join("&#9611;");
+        var barBlank= Array(11 - barLength).join("&#9617;");
+
+        return barFilled + barBlank
+    }
+
+    
+    function padKey(key, length) {
+        return key + ' '.repeat(length - key.length);
+    }
+
+    function commandsHelp() {
+        let longestKeyLength = Math.max(...Object.keys(commands).map(key => key.length));
+
+        let helpText = ""
+        for (let key in commands) {
+            if (commands.hasOwnProperty(key)) {
+                helpText += ` ${padKey(key, longestKeyLength)}\t${commands[key]}\n`
+            }
+        }
+        return helpText
+    }
+
+    var help = '\n[[b;white;]usage:]\n' +
+                '\n <command> - execute the command\n' +
+                ' less <command> - use less to display the output\n\n' +
+                '\n[[b;white;]Available commands:]\n' + 
+               commandsHelp();
+
+    var whois = [
+     
+        '[[b;grey;]Name:]\t\t\tBen Sparks\n' + 
+        '[[b;grey;]Profession:]\t\tIT Professional\n' +
+        '[[b;grey;]Location:]\t\tSouth Carolina, USA\n' +
+        
+        '[[b;grey;]Email:]\t\t\tfoo@someemail.com\n' +
+        
+        
+        '[[b;grey;]Homepage:]\t\thttps:\/\/myHomePage.com\n' +
+        
+        
+        'Here you can write something catchy about yourself\n' +
+        
+        '\r',
+    
+    ];
+
+    function social() { 
+        var hideName = false;
+        let sMap = { 
+             
+                
+                "github": "https:\/\/github.com\/sparksbenjamin",
+                
+                "LinkedIn": "https:\/\/www.linkedin.com\/in\/sparks-benjamin",
+                
+            
+        };
+
+        
+        socialText = []
+        for (let key in sMap) {
+            if (sMap.hasOwnProperty(key)) {
+                if (hideName) {
+                    socialText.push(sMap[key]);
+                } else { 
+                    let longestKeyLength = Math.max(...Object.keys(sMap).map(key => key.length));
+                    socialText.push(`${padKey(key, longestKeyLength)}\t${sMap[key]}`)
+                };
+            }
+        }
+
+        return socialText
+    }
+
+    var certifications = [
+    
+        
+            '---\n' +
+            '[[b;grey;]CompTIA PenTest\u002b: Planning for an Engagement]\n' +
+            'Jan 2025\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2e36a08b-971b-412f-9ade-0af93e00be16?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]MD-102: Introduction to Windows Endpoint Administration]\n' +
+            'Jan 2025\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2b36d67c-a5cd-4da2-9c22-cfd986810dad?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Docker Compose: Using Docker Compose]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/449a238a-1be3-41ab-a58e-d8c21a5924b1?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Account Creation]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/42751b64-8021-488c-9bb7-b7c2bea430b6?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cloud Computer Attacks]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/ab4a04f5-ab65-463b-94df-7f0314df7838?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cloud Computing Concepts]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f902c4a0-5ece-424d-849f-301753c353b0?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cryptography Attacks]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/d5660a0e-6405-4c3c-8469-95641a181fc8?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cryptography Concepts]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/7462e2b0-0d0a-4164-942b-fefba21c49fd?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cryptography Concepts Part 2]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/3d229883-28c7-40d8-b121-cb9a948a5dd4?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cryptography Concepts Part 3]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/28602086-5eac-476c-9286-cc4a4fabf3d9?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Incident Response]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/15fd6aad-18b9-42c8-8dc7-cfb0caac4f5e?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Risk Assessment]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f85ae2f1-a059-40c1-b700-84795f3abd68?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Secure Technology \u0026 Applications]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/990206b8-9621-4954-b251-a517ebe4edcb?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Secure Technology \u0026 Applications]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/990206b8-9621-4954-b251-a517ebe4edcb?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Security Standards]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/9c553c9e-daeb-42b4-b1fc-83803813f750?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]OWASP Top 10: Securing Web Applications]\n' +
+            'Jun 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/d28f54be-46c6-4729-8c15-eca50af7fe60?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Cultivating Mentor Relationships]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/18d2bf63-74b0-465b-9df5-4346a602a75e?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Common Web App Threats]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f0b0c76f-b283-4089-8e22-653db079076d?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Common Web App Threats Part 2]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/12f6e7a2-a584-4d0e-805a-7b0db5d8815b?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Cracking \u0026 Mobile Hacking]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/275a1ed7-db57-46b9-a25a-b933f635fe21?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Denial of Service]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/9958ffdb-984f-42f9-8465-ab5b520810d4?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Evading IDS, Firewall, \u0026 Honeypots]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2d73a111-664e-4ee0-99f0-542357f1c32a?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Evading IDS, Firewall, \u0026 Honeypots Part 2]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/d6c5a2b7-25b5-449e-a7a1-4395b8014991?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Evading IDS, Firewall, \u0026 Honeypots Part 3]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/250bfd35-abaf-4e0b-b006-7e618525a92c?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Hacking Web Servers]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/d4fbd13b-267b-40b7-afb8-132874bbecbb?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Hidden Files \u0026 Covering Tracks]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/af7aabc9-8f8e-41da-9a82-3dfeb4dc53e7?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: IoT Attacks]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/7986c48f-6e2e-4f53-ac9b-0958af426961?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: IoT Concepts]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/aaf87001-d047-4560-ac2a-b488dcb390bc?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: IoT Hacking \u0026 Countermeasures]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2458a2f9-d0f4-448d-bdbe-3aa78a2c0728?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Malware Distribution]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/8b2a258f-a18e-4657-b945-ba0f0d85de69?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Malware Threats]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/4169b113-35b2-4f1d-892b-91a34ba77d50?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Network Sniffing]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/c61a0339-a8ea-400c-a0c6-a54b963ad2b8?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Practical Web App Hacking]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/ae5e123f-82f6-4868-82c0-03fd2474d787?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Privilege Escalation]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b0a77bdb-11c7-4ed3-9e66-5ff5ea6b1e39?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Security Controls Part 2]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2f1cf815-9539-432a-bff9-2fabacee7d42?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Session Hijacking]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/117f65ca-2673-42b7-a8c7-832d3cdb831d?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Social Engineering]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/77970dfa-d250-4c27-8047-71e6a36ecb7e?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: SQL Injection Types \u0026 Tools]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/5ca47a83-1fc4-482a-b744-8e717240c096?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Wireless Hacking Common Threats]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/bcf6807a-87c3-43cb-98ee-6430ae320a7f?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Wireless Hacking Concepts]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/be0321c1-9e8c-416c-9e33-c077da25c210?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Wireless Hacking Tools]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b7d46258-7080-4f66-962e-0873909a226c?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Wireless Hacking Tools]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b7d46258-7080-4f66-962e-0873909a226c?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]ITIL® 4 Foundation: Introduction]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/82850399-c43b-485f-9040-0deb4defb985?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]ITIL® 4 Foundation: Key Concepts of Service Management]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/956500c8-e617-41e9-8e81-e4a3c2c2b179?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]ITIL® 4 Foundation: Key Concepts of Service Management]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/956500c8-e617-41e9-8e81-e4a3c2c2b179?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Taking Action to Empower Employees]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/4b1f4661-9889-4e83-86a7-f90b6e1cc435?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Taking Action to Empower Employees]\n' +
+            'May 2024\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/4b1f4661-9889-4e83-86a7-f90b6e1cc435?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Agile Principles and Methodologies]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/a30efd88-ca50-40ec-af68-8602d69f881d?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Agile Project Planning]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b0477f47-a1ac-4bb3-8a8d-81dbe61fe13d?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]AWS SysOps Associate 2022: Architecting AWS to Meet Business Needs]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/e357a2af-4585-4a29-aefc-b75cc6194087?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CAPM®: Project Management Key Concepts]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/89f32559-8d1e-40e4-9eb6-cd65be821a0e?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Cloud Security Fundamentals: Basics of Cloud Operations]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/bfc3bc3d-acbd-4fc7-ae7d-8f25d56fe9ad?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Cloud Security Fundamentals: Basics of Cloud Operations]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/bfc3bc3d-acbd-4fc7-ae7d-8f25d56fe9ad?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b : Cloud High Availability \u0026 Scaling]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/64a2922c-e6e9-4529-987f-82838f02bbcd?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Automation \u0026 Orchestration]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b3c064eb-03cc-4499-bc74-6b6617fc64b0?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Automation \u0026 Orchestration]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b3c064eb-03cc-4499-bc74-6b6617fc64b0?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Capacity Planning]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/ea295f0a-368d-4c66-bde5-ccba4b12b679?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Component Integration]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/85931677-3da2-4018-a13c-80dca410f732?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Disaster Recovery]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/5a0285b6-0c37-4dfc-bd1a-acb9c88c70c1?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Disaster Recovery]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/5a0285b6-0c37-4dfc-bd1a-acb9c88c70c1?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Identity \u0026 Access Management]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/69eca809-6738-48f5-b148-0cc200d193b3?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Logging, Monitoring, Alerting \u0026 Optimization]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/6b6a8d51-7056-47f0-b67e-91575ff04b67?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Migrations]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/8fd8508e-552f-4fe1-a4cf-f22fe51bb7d3?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Migrations]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/8fd8508e-552f-4fe1-a4cf-f22fe51bb7d3?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Network Deployments]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/60aae284-6beb-4a16-ae2b-1a9cc38bce83?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Network Security]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2b5424de-3adb-4c4e-89a2-adddc7491476?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Operations Management]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b45a2041-5b5f-400a-be68-e5fac0fe0cd7?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Security Controls]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/83d2ba80-d818-423a-9444-1ae5cf46521a?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Solution Design]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/fc3b585a-f6aa-4d4e-9855-5b9ad84ab124?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Troubleshooting Methodologies]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f45b5c4d-8da6-4eba-b572-b5db32828acf?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Data Security \u0026 Compliance Controls]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/8f7f528c-2595-4e4c-83ec-320652eaa55c?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Provisioning Cloud Storage]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/4238a92e-eb2f-4a43-a778-aaab9041a4b7?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Troubleshooting Automation and Orchestration Issues]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/4af671e2-743f-494d-bbf3-043c331d199e?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Troubleshooting Cloud Deployments]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/2d617ab9-b925-4867-930d-a65a56daf3eb?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Troubleshooting Cloud Security Issues]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f432f5f1-e94f-46a9-a3b2-1da0690c8d76?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Troubleshooting Cloud Security Issues]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f432f5f1-e94f-46a9-a3b2-1da0690c8d76?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Password Attacks Part 2]\n' +
+            'Nov 2023\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/1a831232-7e9f-4649-9715-ae7450c4011f?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Splunk Enterprise 9.0 System Administration]\n' +
+            'Feb 2023\n' +
+            
+            'Splunk\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/education.splunk.com\/award\/completion\/32f82da6-5787-3a47-bc48-c2813db83970\/view-ext?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Intro to Knowledge Objects]\n' +
+            'Dec 2022\n' +
+            
+            'Splunk\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/education.splunk.com\/award\/completion\/b77322f9-3bdc-33d2-8200-f05799000aaa\/view-ext?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Intro to Splunk]\n' +
+            'Dec 2022\n' +
+            
+            'Splunk\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/education.splunk.com\/award\/completion\/adcf6683-5244-3201-b0c7-26f1039ff7ae\/view-ext?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Scheduling Reports \u0026 Alerts]\n' +
+            'Dec 2022\n' +
+            
+            'Splunk\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/education.splunk.com\/award\/completion\/f489e752-6770-3a72-86b9-be2797aec19e\/view-ext?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Using Fields]\n' +
+            'Dec 2022\n' +
+            
+            'Splunk\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/education.splunk.com\/award\/completion\/521c3d5e-5a0f-3531-af91-df681b621573\/view-ext?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Managing Database Integrity]\n' +
+            'Aug 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/162f48d4-7f1e-4857-ad2f-c4ab3e183de1?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA CASP\u002b: Assessing \u0026 Managing Risk]\n' +
+            'Jul 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/7cadc18a-722b-40e5-bcd7-eeef525f857d?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CompTIA Cloud\u002b: Cloud Architecture \u0026 Models]\n' +
+            'Jul 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/ea6aa43d-49fe-4ea7-bc15-9ae3ad0ce5a6?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Mobile Device Security \u0026 Handling]\n' +
+            'Jul 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b26bd9e2-2034-4ae2-a722-0dbc73c25bc2?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]SQL Security Architecture]\n' +
+            'Jul 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/997802f6-be28-4dcf-9ae2-71f5a896e406?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Choosing and Using the Best Solution]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b031ca5f-6d96-4626-baad-fbde25f5f267?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]CISM 2020: Information Security \u0026 Business Process Alignment]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/a391d239-9573-4a2f-a85d-2d7601997775?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Confronting Your Assumptions]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/6db92e51-7a08-4a47-979e-57919616e5f8?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Covert Data Gathering]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/b0104498-f5ff-4de5-962a-cc30b0345c71?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Footprinting]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/60193e04-7f0a-4486-8b3f-b3ba00176770?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Hacking Concepts]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/cf7139fa-50aa-447d-a2cf-e9b50306630c?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Host Discovery \u0026 Scanning with Nmap]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/f608b5ac-b5eb-4ad5-a65c-eb967c575702?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Overview \u0026 Threats]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/15bda258-b629-44d4-bea9-adb0a164f392?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Password Attacks]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/67cf3098-d161-44ab-a5f6-d952b2811903?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Pentesting, Laws, \u0026 Standards]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/24a5f73e-4a90-4d03-9982-cf0e5b5333e7?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: ProxyChains \u0026 Enumeration]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/d5f06efb-efcf-40dc-9045-c7f54eba09a1?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Security Controls]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/8e62cc89-1135-4166-b40c-24a9710fdb26?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: SQL Injection]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/06a447af-5226-4979-a129-c81e16027fde?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Ethical Hacker: Vulnerability Analysis Concepts \u0026 Tools]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/5a0b3910-b1c5-4fde-a876-ad1da00f36b4?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Getting to the Root of a Problem]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/e743054e-33fc-4e2a-8d93-68d54897e7df?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Optimizing Virtual Collaboration]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/86de5b1f-766d-4470-8848-a15231339196?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Outwitting Your Cognitive Bias]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/751f73bc-025b-43f9-b72c-936d29700c91?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Providing Telephone Customer Service]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/6d94511d-1cf3-4a6e-855f-94d00917b19f?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Strength under Pressure: Building Perseverance and Resilience]\n' +
+            'Jun 2022\n' +
+            
+            'Skillsoft\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/skillsoft.digitalbadges.skillsoft.com\/a62030cc-4f12-4f4e-b108-ee87c539d999?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Computer Forensics]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/photos.google.com\/album\/AF1QipOH_t-cvOaRfjFAVp5d7njS-lVzgcgXq9uJg-5J\/photo\/AF1QipOUgmxD4b0R5RHS4dbul4wXmyYENF4OwjvZPbkq?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Linux Administration (General)]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/photos.google.com\/album\/AF1QipOH_t-cvOaRfjFAVp5d7njS-lVzgcgXq9uJg-5J\/photo\/AF1QipPIJu7BG60JdAIzkNNPJh8mAi_WrXeck70liMHG?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Microsoft Security]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/photos.google.com\/album\/AF1QipOH_t-cvOaRfjFAVp5d7njS-lVzgcgXq9uJg-5J\/photo\/AF1QipPUFanSusUCOHUX1MhQw5V6B9UuUL0iN3f__FGG?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]MySQL 3.23 Administration]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/photos.google.com\/album\/AF1QipOH_t-cvOaRfjFAVp5d7njS-lVzgcgXq9uJg-5J\/photo\/AF1QipNSiogtTMTIL8bRNRdGgxl29ux-HT-UFxIRZ8wH?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]PHP5 Master]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/plus.google.com\/photos\/yourphotos?pid=5786932618232635842\u0026oid=105824957750791839151\u0026authkey=CP2jl7KA9s24gQE\u0026trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Web Design Concepts]\n' +
+            '\n' +
+            
+            'Brainbench\n' +
+            
+            
+            
+            'Badge: \thttps:\/\/photos.google.com\/album\/AF1QipOH_t-cvOaRfjFAVp5d7njS-lVzgcgXq9uJg-5J\/photo\/AF1QipN0nge7SLgRbSMA_x8bSOCc3K-W-i4k1imVvaxL?trk=public_profile_see-credential\n' +
+            
+            '\r',
+        
+    
+    ];
+    
+    var work = [
+    
+        
+            '---\n' +
+            '[[b;red;]Job With Red Title]\n' +
+            '-\n' +
+            'somewhere\n' +
+            'August 2010 - Present\n' +
+            '\n' +
+            'Some description about this red title job' +
+            '\r',
+        
+            '---\n' +
+            '[[b;purple;]Job with purple title]\n' +
+            '-\n' +
+            'somewhere elese\n' +
+            'July 2000  - July 2010\n' +
+            '\n' +
+            'Some description about this purple job' +
+            '\r',
+        
+            '---\n' +
+            '[[b;grey;]Job with default color title]\n' +
+            '-\n' +
+            'anywhere\n' +
+            'July 2008 - 2010\n' +
+            '\n' +
+            'Description about this default color job' +
+            '\r',
+        
+    
+    ];
+
+    var education = [
+    
+        
+            '---\n' +
+            '[[b;grey;]ITT =\u003e Bachelor of Science]\n' +
+            '2007 - 2009\n' +
+            
+                "Information Security Systems\n" +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;grey;]ITT =\u003e Associate of Science]\n' +
+            '2005 - 2007\n' +
+            
+                "Information Technology and Computer Networking\n" +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;grey;]Tri-County Technical College]\n' +
+            '2004 - 2004\n' +
+            
+                "Information Technology and Computer Programming\n" +
+            
+            "\r",
+        
+            '---\n' +
+            '[[b;grey;]Seneca High School]\n' +
+            '2000 - 2003\n' +
+            
+            "\r",
+        
+    
+    ];
+
+    var projects = [
+    
+        
+            '---\n' +
+            '[[b;grey;]Jonas Encore Activity Deployment]\n' +
+            'Feb 2019\n' +
+            '\n' +
+            
+            'Worked with Jonas Deployment team to deploy and test the Beta Activity Tracking Module.  This includes a sign in system for the Club to use to track activities for different events and resources.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Jonas to AD Contacts Integration]\n' +
+            '2018\n' +
+            '\n' +
+            
+            'Created a dynamic PowerShell script that collected current member data from Jonas Encore Database and created AD Contacts for each account.  This allowed us to have member information listed in or Global Address List (GAL) for our Office 365 Deployment.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Renter Management Application Development]\n' +
+            '2017\n' +
+            '\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]AT\u0026T Office@Hand VoIP Deployment]\n' +
+            '2015\n' +
+            '\n' +
+            
+            'Migrated entire ComDial phone system to Office@hand VoIP solution.  Ported all previous numbers to reduce any issues with lost contacts or numbers.  Deployed with 0 downtime with call delivery.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]City of Laurens E911 \u0026 Security Camera Instalation]\n' +
+            '2015\n' +
+            '\n' +
+            
+            'At the request of the City, we regained access to the secure city wide wifi.  Reclaimed the cameras and call boxes so that they can be maintained by a local Security Company and the City.  Provided training on how to manage the cameras and the Metro Wireless network installed  Provided network diagram of current network topology and AP alignments.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Doorking Access Controller Deployment]\n' +
+            '2014\n' +
+            '\n' +
+            
+            'Using the Doorking or DKS system.  Updated all gates to use this DKS system.  Migrated Data from old Syntech system to Doorking.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Gate Replacement System]\n' +
+            '2021\n' +
+            '\n' +
+            
+            'Replace and update the current access control system for Private Gated Communitte.  Ensure new system has increased up-time with lower maintenance windows.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Club Renovation]\n' +
+            'Oct 2018\n' +
+            '\n' +
+            
+            'Design, Implement and Support an AV system for Venture to account for Daily ease of use.   This AV system needed to be able to run 7 4K TV\u0027s\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Jonas Encore Deployment]\n' +
+            '2017\n' +
+            '\n' +
+            
+            'Created a reliable High Availability Solution for New Club Management Software name Jonas Encore.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Migration to Office 365]\n' +
+            'Jan 2016\n' +
+            '\n' +
+            
+            'Migrated company from local Email and Calendaring solution called Kerio to Office 365.  Migration of email from local client disk storage back to the server and then server to office 365 import.\n' +
+            
+            "\r",
+      
+            '---\n' +
+            '[[b;grey;]Network Redesign]\n' +
+            'Mar 2014\n' +
+            '\n' +
+            
+            'Redesigned network for more reliability and stability while reducing the reoccurring cost of the network connections. Setting up Site-to-Site VPN\u0027s for secure connections and providing greater bandwidth at each location.  Removed Apple based networking equipment with Netgear and Cisco products.\n' +
+            
+            "\r",
+      
+    
+    ];
+
+    var skills = [
+    
+        
+            '[[b;grey;]Skill 1:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Skill 2:]\n' +
+            progressBar( 30 ) +
+            '30' + '%\n' +
+            
+            '\r',
+        
+            '[[b;blue;]Skill 3:]\n' +
+            progressBar( 50 ) +
+            '50' + '%\n' +
+            
+            'Skill names can have colors too\n' +
+            
+            '\r',
+        
+    
+    ];
+
+    var softSkills = [
+    
+        
+            '[[b;grey;]Communication:]\n' +
+            progressBar( 95 ) +
+            '95' + '%\n' + 
+            
+            '\r',
+        
+            '[[b;grey;]Problem-Solving:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Leadership:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Adaptability:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Critical Thinking:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Work Ethic:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+            '[[b;grey;]Project Managment:]\n' +
+            progressBar( 90 ) +
+            '90' + '%\n' + 
+            
+            'Description\n' +
+            
+            '\r',
+        
+    
+    ];
+  
+    var languages = [
+    
+        
+            '[[b;grey;]English:]\n' +
+            progressBar( 100 )+ 
+            '100' + '%\n' +
+            
+            'First and Primary language\n' +
+            
+            '\r',
+        
+    
+    ];
+
+    var misc = [
+         
+        '[[b;teal;]List of programming\/scripting languages]\n' +
+        '[[;;]-------------------------------------------------------------\n|                        Coding                             |\n-------------------------------------------------------------\n\u002b===========\u002b===============================================\u002b\n| Language   |                                 | Years      |\n\u002b===========\u002b===============================================\u002b\n| C# .Net    | ###################---------- |    (5\u002b)      | \n| C\u002b\u002b        | ########--------------------- |    (3\u002b)      |\n| Perl       | ############################# |    (7\u002b)      |\n| Powershell | ############################# |    (18\u002b)     |\n| PHP        | ############################# |    (7\u002b)      |\n| Python     | ############################# |    (10\u002b)     |\n| Bash\/Shell | ############################# |    (10\u002b)     |\n| go         | ###-------------------------- |    (~1)      |\n| TSQL       | ##########################--- |    (9\u002b)      |\n| JavaScript | #######################------ |    (9\u002b)      |\n\u002b===========================================================\u002b\n]\n',
+         
+    ];
+
+    var source =  '        _______            \n' +
+                  '       |       |           \n' +
+                  '       |       |           \n' +
+                  '       |_______|_______    \n' +
+                  '               |       |   \n' +
+                  '               |       |   \n' +
+                  ' ______________|_______|   \n' +
+                  '|      |       |       |   \n' +
+                  '|      |       |       |   \n' +
+                  '|______|_______|_______|   \n' +
+                  '[[;red;]May the source be with you]\n' +
+                  '[[;grey;]https://github.com/coolapso/hugo-theme-terminalcv\n';
+
+    var all = [ 
+        whois,
+        social(),
+        work,
+        education,
+        skills,
+        softSkills,
+        languages,
+        projects,
+        certifications,
+        misc,
+        
+        
+        
+    ]
+
+    $('body').terminal(function(command, term) {
+
+        var useLess = false;
+        
+
+        function echoArray(array) {
+            if (useLess) {
+                term.less(array);
+            } else {
+                for (i = 0; i < array.length; i += 1) {
+                    term.echo(array[i]);
+                }
+            }
+        }
+        
+        function progress(percent, width) {
+            var size = Math.round(width*percent/100);
+            var left = '', taken = '', i;
+            for (i=size; i--;) {
+                taken += '=';
+            }
+            if (taken.length > 0) {
+                taken = taken.replace(/=$/, '>');
+            }
+            for (i=width-size; i--;) {
+                left += ' ';
+            }
+            return '[' + taken + left + '] ' + percent + '%';
+        }
+
+        function loading () {
+            var i = 0, size = 30;
+            prompt = term.get_prompt();
+            string = progress(0, size);
+            term.set_prompt(progress);
+            animation = true;
+            (function loop() {
+                string = progress(i++, size);
+                term.set_prompt(string);
+                if (i < 100) {
+                    timer = setTimeout(loop, 10);
+                } else {
+                    term.echo(progress(i, size) + ' [[b;green;]OK]').set_prompt(prompt);
+                    animation = false
+                }
+            })();
+        }
+
+        commands = command.split(/[ ]+/);
+        if (commands[0] == 'less') {
+            useLess = true;
+            commands.shift();
+        } 
+                    
+        switch(commands[0]) {
+            case 'whois':
+                
+                echoArray(whois);
+                break;
+            case 'social':
+                
+                echoArray(social());
+                break;
+            case 'work':
+                
+                echoArray(work);
+                break;
+            case 'education':
+                
+                echoArray(education);
+                break;
+            case 'skills':
+                
+                echoArray(skills);
+                break;
+            case 'softskills':
+                
+                echoArray(softSkills);
+                break;
+            case 'languages':
+                
+                echoArray(languages);
+                break;
+            case 'projects':
+                
+                echoArray(projects);
+                break;
+            case 'certifications':
+                
+                term.echo(certifications);
+                break;
+            case 'more':
+                
+                echoArray(misc);
+                break;
+            case 'help':
+            case '?':
+                term.echo(help);
+                break;
+            case 'all':
+                
+                echoArray(all.flat(1));
+                break;
+            
+            case 'startx':
+                term.echo("loading ...");
+                loading();
+                setTimeout(function(){window.location = "https:\/\/github.com\/sparksbenjamin"}, 2000);
+                break;
+            
+            case ':(){:|:&};:':
+                term.echo("nice try");
+                break;
+            case 'source':
+                
+                term.echo(source);
+                break;
+            
+            case 'exit':
+                term.echo("terminating ... ")
+                loading();
+                setTimeout(function(){window.location = 'about:blank'}, 2000);
+                break;
+            
+            
+            case 'version':
+                term.echo("2.0.8");
+                break;
+            
+            case '':
+                break;
+            default:
+                term.echo("\nunknown command: " + command + "\n" +
+                          "please type 'help' or '?' for a list of available commands\n");
+        }
+    }, {
+        prompt: '[[;red;][][[;pink;]user@terminalCV][[;red;]\\]][[;grey;]-][[;red;][][[;blue;]~\/#][[;red;]\\]][[;orange;]: ]',
+        greetings: "[[b;white;]â€Ž _                      _             _  _______      __\n| |                    (_)           | |\/ ____\\ \\    \/ \/\n| |_ ___ _ __ _ __ ___  _ _ __   __ _| | |     \\ \\  \/ \/ \n| __\/ _ \\ \u0027__| \u0027_ \u0060 _ \\| | \u0027_ \\ \/ _\u0060 | | |      \\ \\\/ \/  \n| ||  __\/ |  | | | | | | | | | | (_| | | |____   \\  \/   \n \\__\\___|_|  |_| |_| |_|_|_| |_|\\__,_|_|\\_____|   \\\/\n\nWelcome to my online resume\n\nType \u0027help\u0027 for a list of available commands\n]",
+
+        keydown: function(e, term) {
+            if (animation) {
+                if (e.which == 68 && e.ctrlKey) { 
+                    clearTimeout(timer);
+                    animation = false;
+                    term.echo(string + ' [[b;red;]FAIL]')
+                    .set_prompt(prompt);
+                }
+                return false;
+            }
+        },
+        autocompleteMenu: true,
+        completion: Object.keys(commands)
+        
+    });
+});
+</script>
+
+        </body>
+</html>
